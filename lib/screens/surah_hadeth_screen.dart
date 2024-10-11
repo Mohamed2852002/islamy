@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/widgets/content_card_widget.dart';
+import 'package:islamy/widgets/surah_widgets/content_card_widget.dart';
 
 class SurahHadethScreen extends StatefulWidget {
   const SurahHadethScreen({super.key});

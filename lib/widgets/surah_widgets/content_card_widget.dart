@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/models/hadeth_model.dart';
 import 'package:islamy/models/surah_model.dart';
-import 'package:islamy/widgets/surah_line_widget.dart';
+import 'package:islamy/widgets/surah_widgets/surah_line_widget.dart';
 
 class ContentCardWidget extends StatefulWidget {
   const ContentCardWidget({super.key, required this.model});

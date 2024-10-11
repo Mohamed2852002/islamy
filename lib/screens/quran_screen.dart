@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/models/surah_model.dart';
 import 'package:islamy/screens/surah_hadeth_screen.dart';
-import 'package:islamy/widgets/surah_rows.dart';
+import 'package:islamy/widgets/surah_widgets/surah_rows.dart';
 
 class QuranScreen extends StatelessWidget {
   const QuranScreen({super.key});

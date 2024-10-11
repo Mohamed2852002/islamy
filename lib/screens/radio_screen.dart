@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
+import 'package:islamy/widgets/radio_widgets/play_and_pause.dart';
 
 class RadioScreen extends StatefulWidget {
   const RadioScreen({super.key});
@@ -10,18 +10,6 @@ class RadioScreen extends StatefulWidget {
 }
 
 class _RadioScreenState extends State<RadioScreen> {
-  final player = AudioPlayer();
-  bool isPlaying = true;
-
-  Future<void> playAudio() async {
-    await player.setAsset('assets/Let It Happen.mp3');
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    playAudio();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,31 +45,7 @@ class _RadioScreenState extends State<RadioScreen> {
                       size: 40,
                     ),
                   ),
-                  isPlaying
-                      ? IconButton(
-                          onPressed: () {
-                            isPlaying = false;
-                            player.play();
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.play_arrow_rounded,
-                            color: Color(0xffb7935f),
-                            size: 60,
-                          ),
-                        )
-                      : IconButton(
-                          onPressed: () async {
-                            await player.pause();
-                            isPlaying = true;
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.pause,
-                            color: Color(0xffb7935f),
-                            size: 60,
-                          ),
-                        ),
+                  const PlayAndPause(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(
