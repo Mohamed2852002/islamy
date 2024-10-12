@@ -28,7 +28,7 @@ class _PlayAndPauseState extends State<PlayAndPause> {
         ? IconButton(
             onPressed: () async {
               await player.pause();
-              isPlaying = true;
+              isPlaying = false;
               setState(() {});
             },
             icon: const Icon(
@@ -39,7 +39,7 @@ class _PlayAndPauseState extends State<PlayAndPause> {
           )
         : IconButton(
             onPressed: () {
-              isPlaying = false;
+              isPlaying = true;
               player.play();
               setState(() {});
             },
