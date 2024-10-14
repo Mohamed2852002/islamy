@@ -13,7 +13,7 @@ class _PlayAndPauseState extends State<PlayAndPause> {
   bool isPlaying = false;
 
   Future<void> playAudio() async {
-    await player.setAsset('assets/Let It Happen.mp3');
+    await player.setUrl('https://media-ssl.musicradio.com/SmoothUK');
   }
 
   @override
