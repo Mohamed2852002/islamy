@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
+  static const lightPrimary = Colors.white;
+  // mojihjk
+  // asfl;askf
   static final lighTheme = ThemeData(
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         selectedIconTheme: IconThemeData(size: 45),
