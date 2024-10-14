@@ -10,7 +10,6 @@ class RadioScreen extends StatefulWidget {
 }
 
 class _RadioScreenState extends State<RadioScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +23,8 @@ class _RadioScreenState extends State<RadioScreen> {
               child: Image.asset('assets/images/radio.png'),
             ),
             const SizedBox(height: 57),
-            const Text(
-              'إذاعة القرآن الكريم',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            Text('إذاعة القرآن الكريم',
+                style: Theme.of(context).textTheme.labelMedium),
             const SizedBox(height: 60),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -39,18 +33,18 @@ class _RadioScreenState extends State<RadioScreen> {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.skip_previous_sharp,
-                      color: Color(0xffb7935f),
+                      color: Theme.of(context).colorScheme.primaryContainer,
                       size: 40,
                     ),
                   ),
                   const PlayAndPause(),
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.skip_next_sharp,
-                      color: Color(0xffb7935f),
+                      color: Theme.of(context).colorScheme.primaryContainer,
                       size: 40,
                     ),
                   ),
