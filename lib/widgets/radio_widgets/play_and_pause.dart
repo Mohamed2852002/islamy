@@ -31,9 +31,9 @@ class _PlayAndPauseState extends State<PlayAndPause> {
               isPlaying = false;
               setState(() {});
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.pause,
-              color: Color(0xffb7935f),
+              color: Theme.of(context).colorScheme.primaryContainer,
               size: 60,
             ),
           )
@@ -43,9 +43,9 @@ class _PlayAndPauseState extends State<PlayAndPause> {
               player.play();
               setState(() {});
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.play_arrow_rounded,
-              color: Color(0xffb7935f),
+              color: Theme.of(context).colorScheme.primaryContainer,
               size: 60,
             ),
           );

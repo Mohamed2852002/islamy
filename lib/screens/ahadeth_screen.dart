@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/models/hadeth_model.dart';
-import 'package:islamy/screens/surah_hadeth_screen.dart';
+import 'package:islamy/screens/hadeth_content_screen.dart';
 
 class AhadethScreen extends StatefulWidget {
   const AhadethScreen({super.key});
@@ -31,27 +31,24 @@ class _AhadethScreenState extends State<AhadethScreen> {
                 child: Image.asset('assets/images/bsmalh.png'),
               ),
             ),
-            const Divider(
+            Divider(
               height: 0,
               thickness: 3,
-              color: Color(0xffb7935f),
+              color: Theme.of(context).colorScheme.primaryContainer,
             ),
-            const SizedBox(
+             SizedBox(
               height: 50,
               child: Center(
                 child: Text(
                   'الأحاديث',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: Theme.of(context).textTheme.labelMedium
                 ),
               ),
             ),
-            const Divider(
+            Divider(
               height: 0,
               thickness: 3,
-              color: Color(0xffb7935f),
+              color: Theme.of(context).colorScheme.primaryContainer,
             ),
             Expanded(
               flex: 2,
@@ -63,13 +60,13 @@ class _AhadethScreenState extends State<AhadethScreen> {
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, SurahHadethScreen.surahScreenName,
+                        context, HadethContentScreen.hadethContentScreenName,
                         arguments: ahadeth[index]);
                   },
                   child: Text(
                     textAlign: TextAlign.center,
                     ahadeth[index].hadethTitle,
-                    style: const TextStyle(fontSize: 24),
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
               ),

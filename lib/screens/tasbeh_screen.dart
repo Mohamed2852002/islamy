@@ -67,51 +67,39 @@ class _TasbehScreenState extends State<TasbehScreen>
               ],
             ),
             const SizedBox(height: 25),
-            const Text(
-              'عدد التسبيحات',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            Text('عدد التسبيحات',
+                style: Theme.of(context).textTheme.labelMedium),
             const SizedBox(height: 25),
             Container(
               padding: const EdgeInsets.all(18),
               decoration: BoxDecoration(
-                  color: const Color(0xffb7935f).withOpacity(0.57),
+                  color: Theme.of(context).colorScheme.tertiaryContainer,
                   borderRadius: BorderRadius.circular(25)),
               child: Text(
                 '$tasbehCounter',
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 5,
+                horizontal: 14,
+                vertical: 10,
               ),
               decoration: BoxDecoration(
-                  color: const Color(0xffb7935f),
+                  color: Theme.of(context).colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(25)),
-              child: Text(
-                tasbeh[index],
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              child: Text(tasbeh[index],
+                  style: Theme.of(context).textTheme.headlineMedium),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 265),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    backgroundColor: const Color(0xffb7935f)),
+                  shape: const CircleBorder(),
+                  backgroundColor:
+                      Theme.of(context).colorScheme.primaryContainer,
+                ),
                 onPressed: () {
                   setState(() {
                     tasbehCounter = 0;

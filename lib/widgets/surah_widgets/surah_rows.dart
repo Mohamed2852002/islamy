@@ -18,28 +18,20 @@ class SurahRows extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              textAlign: TextAlign.center,
-              surahModel.surahVerses,
-              style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
+                textAlign: TextAlign.center,
+                surahModel.surahVerses,
+                style: Theme.of(context).textTheme.bodyMedium),
           ),
           Container(
             height: 50,
             width: 3,
-            color: const Color(0xffb7935f),
+            color: Theme.of(context).colorScheme.primaryContainer,
           ),
           Expanded(
             child: Text(
-              textAlign: TextAlign.center,
-              surahModel.surahName,
-              style: const TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
+                textAlign: TextAlign.center,
+                surahModel.surahName,
+                style: Theme.of(context).textTheme.bodyMedium),
           ),
         ],
       ),
