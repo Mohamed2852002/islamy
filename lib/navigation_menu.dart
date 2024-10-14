@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy/screens/ahadeth_screen.dart';
 import 'package:islamy/screens/quran_screen.dart';
 import 'package:islamy/screens/radio_screen.dart';
+import 'package:islamy/screens/settings_screen.dart';
 import 'package:islamy/screens/tasbeh_screen.dart';
 
 class NavigationMenu extends StatefulWidget {
@@ -13,8 +14,8 @@ class NavigationMenu extends StatefulWidget {
 }
 
 class _NavigationMenuState extends State<NavigationMenu> {
-  int currentIndex = 3;
-  PageController pageController = PageController(initialPage: 3);
+  int currentIndex = 4;
+  PageController pageController = PageController(initialPage: 4);
 
   @override
   Widget build(BuildContext context) {
@@ -44,22 +45,29 @@ class _NavigationMenuState extends State<NavigationMenu> {
               },
             );
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                backgroundColor: Color(0xffb7935f),
-                icon: ImageIcon(AssetImage('assets/images/radio_icon.png')),
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon: const Icon(Icons.settings),
+                label: 'الإعدادات'),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon:
+                    const ImageIcon(AssetImage('assets/images/radio_icon.png')),
                 label: 'الراديو'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xffb7935f),
-                icon: ImageIcon(AssetImage('assets/images/sebha_blue.png')),
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon:
+                    const ImageIcon(AssetImage('assets/images/sebha_blue.png')),
                 label: 'التسبيح'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xffb7935f),
-                icon: ImageIcon(AssetImage('assets/images/hadeth.png')),
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
                 label: 'الأحاديث'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xffb7935f),
-                icon: ImageIcon(AssetImage('assets/images/quran_icon.png')),
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon:
+                    const ImageIcon(AssetImage('assets/images/quran_icon.png')),
                 label: 'القرآن'),
           ],
         ),
@@ -73,6 +81,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
             );
           },
           children: const [
+            SettingsScreen(),
             RadioScreen(),
             TasbehScreen(),
             AhadethScreen(),

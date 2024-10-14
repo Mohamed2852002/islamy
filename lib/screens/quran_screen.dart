@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/models/surah_model.dart';
-import 'package:islamy/screens/surah_hadeth_screen.dart';
+import 'package:islamy/screens/surah_content_screen.dart';
 import 'package:islamy/widgets/surah_widgets/surah_rows.dart';
 
 class QuranScreen extends StatelessWidget {
@@ -254,20 +254,31 @@ class QuranScreen extends StatelessWidget {
             const Divider(
               height: 0,
               thickness: 3,
-              color: Color(0xffb7935f),
             ),
-            SurahRows(
-              surahModel: SurahModel(
-                surahName: 'اسم السورة',
-                surahVerses: 'عدد الأيات',
-                onTextTap: () {},
-                surahNumber: 0,
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                      textAlign: TextAlign.center,
+                      'عدد الأيات',
+                      style: Theme.of(context).textTheme.labelMedium),
+                ),
+                Container(
+                  height: 50,
+                  width: 3,
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                ),
+                Expanded(
+                  child: Text(
+                      textAlign: TextAlign.center,
+                      'اسم السورة',
+                      style: Theme.of(context).textTheme.labelMedium),
+                ),
+              ],
             ),
             const Divider(
               height: 0,
               thickness: 3,
-              color: Color(0xffb7935f),
             ),
             Expanded(
               flex: 2,
@@ -282,7 +293,7 @@ class QuranScreen extends StatelessWidget {
                       onTextTap: () {
                         Navigator.pushNamed(
                           context,
-                          SurahHadethScreen.surahScreenName,
+                          SurahContentScreen.surahContentScreenName,
                           arguments: SurahModel(
                             surahName: surahs[index],
                             surahVerses: surahVerseCounts[index],
