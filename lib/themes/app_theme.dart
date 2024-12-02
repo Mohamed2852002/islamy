@@ -7,6 +7,16 @@ class AppTheme {
 
   static final lighTheme = ThemeData(
     textTheme: const TextTheme(
+      titleMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: lightPrimary,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w400,
+      ),
       bodyMedium: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.w400,
@@ -52,6 +62,16 @@ class AppTheme {
 
   static final darkTheme = ThemeData(
     textTheme: const TextTheme(
+      titleMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: lightPrimary,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w400,
+      ),
       bodyMedium: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.w400,

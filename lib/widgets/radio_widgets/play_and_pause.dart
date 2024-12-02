@@ -8,13 +8,10 @@ class PlayAndPause extends StatefulWidget {
   State<PlayAndPause> createState() => _PlayAndPauseState();
 }
 
-class _PlayAndPauseState extends State<PlayAndPause> {
+class _PlayAndPauseState extends State<PlayAndPause>
+    with AutomaticKeepAliveClientMixin {
   final player = AudioPlayer();
   bool isPlaying = false;
-
-  Future<void> playAudio() async {
-    await player.setUrl('https://media-ssl.musicradio.com/SmoothUK');
-  }
 
   @override
   void initState() {
@@ -24,6 +21,7 @@ class _PlayAndPauseState extends State<PlayAndPause> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return isPlaying
         ? IconButton(
             onPressed: () async {
@@ -50,4 +48,11 @@ class _PlayAndPauseState extends State<PlayAndPause> {
             ),
           );
   }
+
+  Future<void> playAudio() async {
+    await player.setUrl('https://backup.qurango.net/radio/ibrahim_alakdar');
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/preferences/shared_pref_handler.dart';
 import 'package:islamy/screens/ahadeth_screen.dart';
 import 'package:islamy/screens/quran_screen.dart';
 import 'package:islamy/screens/radio_screen.dart';
 import 'package:islamy/screens/settings_screen.dart';
 import 'package:islamy/screens/tasbeh_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -14,22 +16,25 @@ class NavigationMenu extends StatefulWidget {
 }
 
 class _NavigationMenuState extends State<NavigationMenu> {
-  int currentIndex = 4;
-  PageController pageController = PageController(initialPage: 4);
+  int currentIndex = 0;
+  PageController pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage('assets/images/background_image.png'),
+          image: AssetImage(
+              SharedPrefHandler.sharedPreferences.getBool('isDark') ?? false
+                  ? 'assets/images/home_dark_background.png'
+                  : 'assets/images/background_image.png'),
         ),
       ),
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('إسلامي'),
+          title: Text(AppLocalizations.of(context)!.app_name),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
@@ -48,27 +53,27 @@ class _NavigationMenuState extends State<NavigationMenu> {
           items: [
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).colorScheme.primary,
-                icon: const Icon(Icons.settings),
-                label: 'الإعدادات'),
+                icon:
+                    const ImageIcon(AssetImage('assets/images/quran_icon.png')),
+                label: AppLocalizations.of(context)!.quran),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).colorScheme.primary,
-                icon:
-                    const ImageIcon(AssetImage('assets/images/radio_icon.png')),
-                label: 'الراديو'),
+                icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
+                label: AppLocalizations.of(context)!.ahadeth),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 icon:
                     const ImageIcon(AssetImage('assets/images/sebha_blue.png')),
-                label: 'التسبيح'),
-            BottomNavigationBarItem(
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
-                label: 'الأحاديث'),
+                label: AppLocalizations.of(context)!.tasbeeh),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 icon:
-                    const ImageIcon(AssetImage('assets/images/quran_icon.png')),
-                label: 'القرآن'),
+                    const ImageIcon(AssetImage('assets/images/radio_icon.png')),
+                label: AppLocalizations.of(context)!.radio),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                icon: const Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settings),
           ],
         ),
         body: PageView(
@@ -81,11 +86,11 @@ class _NavigationMenuState extends State<NavigationMenu> {
             );
           },
           children: const [
-            SettingsScreen(),
-            RadioScreen(),
-            TasbehScreen(),
-            AhadethScreen(),
             QuranScreen(),
+            AhadethScreen(),
+            TasbehScreen(),
+            RadioScreen(),
+            SettingsScreen(),
           ],
         ),
       ),

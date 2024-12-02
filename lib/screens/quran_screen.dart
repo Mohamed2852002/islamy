@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy/models/surah_model.dart';
 import 'package:islamy/screens/surah_content_screen.dart';
 import 'package:islamy/widgets/surah_widgets/surah_rows.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatelessWidget {
   const QuranScreen({super.key});
@@ -259,9 +260,12 @@ class QuranScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                      textAlign: TextAlign.center,
-                      'عدد الأيات',
-                      style: Theme.of(context).textTheme.labelMedium),
+                    textAlign: TextAlign.center,
+                    AppLocalizations.of(context)!.verses_number,
+                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          fontSize: 24,
+                        ),
+                  ),
                 ),
                 Container(
                   height: 50,
@@ -271,7 +275,7 @@ class QuranScreen extends StatelessWidget {
                 Expanded(
                   child: Text(
                       textAlign: TextAlign.center,
-                      'اسم السورة',
+                      AppLocalizations.of(context)!.sura_name,
                       style: Theme.of(context).textTheme.labelMedium),
                 ),
               ],

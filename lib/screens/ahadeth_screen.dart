@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/models/hadeth_model.dart';
 import 'package:islamy/screens/hadeth_content_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethScreen extends StatefulWidget {
   const AhadethScreen({super.key});
@@ -40,7 +41,7 @@ class _AhadethScreenState extends State<AhadethScreen> {
               height: 50,
               child: Center(
                 child: Text(
-                  'الأحاديث',
+                  AppLocalizations.of(context)!.ahadeth,
                   style: Theme.of(context).textTheme.labelMedium
                 ),
               ),

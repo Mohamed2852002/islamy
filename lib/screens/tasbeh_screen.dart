@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TasbehScreen extends StatefulWidget {
   const TasbehScreen({super.key});
@@ -67,7 +68,7 @@ class _TasbehScreenState extends State<TasbehScreen>
               ],
             ),
             const SizedBox(height: 25),
-            Text('عدد التسبيحات',
+            Text(AppLocalizations.of(context)!.tasbeeh_number,
                 style: Theme.of(context).textTheme.labelMedium),
             const SizedBox(height: 25),
             Container(

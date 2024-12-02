@@ -1,0 +1,15 @@
+{
+    "app_name":"اسلامي",
+    "sura_name":"اسم السورة",
+    "verses_number":"عدد الأيات",
+    "tasbeeh_number":"عدد التسبيحات",
+    "holy_quran_radio":"إذاعة القرآن الكريم",
+    "quran":"قرأن",
+    "ahadeth":"احاديث",
+    "radio":"اذاعة",
+    "tasbeeh":"تسبيح",
+    "settings":"الإعدادات",
+    "language":"اللغة",
+    "theme":"الوضع الداكن",
+    "active_language":"العربية"
+}

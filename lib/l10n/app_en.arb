@@ -1,0 +1,15 @@
+{
+    "app_name":"Islami",
+    "sura_name":"Sura Name",
+    "verses_number":"Verses Number",
+    "tasbeeh_number":"Praises Number",
+    "holy_quran_radio":"Holy Quran Radio",
+    "quran":"Quran",
+    "ahadeth":"Ahadeth",
+    "radio":"Radio",
+    "tasbeeh":"Tasbeeh",
+    "settings":"Settings",
+    "language":"Language",
+    "theme":"Dark Theme",
+    "active_language":"English"
+}
